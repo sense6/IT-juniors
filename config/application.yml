@@ -9,3 +9,6 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+github_client_id: 1cbe45a16445b4a16694
+github_secret: c8c17db0f21945bc263cd937d30b39abbab055af
