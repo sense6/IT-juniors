@@ -1,4 +1,5 @@
 # ..:: Netguru Code College - IT Juniors App ::..
+[![codebeat badge](https://codebeat.co/badges/39f56507-bbeb-4c86-ba25-22b2a37223e2)](https://codebeat.co/projects/github-com-netgurucodecollege-team_charlie_project-master)
 
 # Technology stack :gem:
 
