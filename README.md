@@ -1,24 +1,74 @@
-# README
+# ..:: Netguru Code College - IT Juniors App ::..
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Technology stack :gem:
 
-Things you may want to cover:
+Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 2.4.1 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 5.1.2 |
+| mysql | 5.7.11 |
 
-* Ruby version
+# Browser support
 
-* System dependencies
+Name |  Version |
+| :--: | :---: |
+| IE | 10, 11 |
+| Chrome | newest |
+| Firefox | newest |
+| Safari | 7 and greater |
+| Opera | 15 and greater |
 
-* Configuration
+# Prerequisites :coffee:
 
-* Database creation
+## You will need the following things properly installed on your machine..
 
-* Database initialization
+* mysql
 
-* How to run the test suite
+# Installation :books:
 
-* Services (job queues, cache servers, search engines, etc.)
+## Do following things if it is your initial setup
 
-* Deployment instructions
+  * `cd ~/Developer/`
+  * `git clone git@github.com:NetguruCodeCollege/netguru_code_college_todo_app.git`
+  * `cd netguru_code_college_todo_app`
+  * `bundle install`
+  * create database with default seeds `rake db:create db:schema:load && rake db:seed`
 
-* ...
+# Running / Development :shoe:
+
+## You want to run a project on Your local machine - let's to it!
+
+  * `cd ~/Developer/netguru_code_college_todo_app`
+  * `rails s`
+
+# Running Tests :diamonds:
+
+## Specs are really important..
+
+  * `bundle exec rspec`
+
+# Deploying :bullettrain_side:
+
+## How to make deploy with current changes?
+
+  * lorem ipsum
+
+# Accessto production :bullettrain_side:
+
+## How to get access production server & database
+
+  * lorem ipsum
+
+# Worth to read
+
+  * Here we can place some additional documentation specific to project that is Worth
+    knowing
+
+
+# Troubleshooting :handbag:
+
+  * Some specific, often occuring things that can go wrong during setup of project.
+
+## Other valuable info
+
+  * lorem ipsum dolor
