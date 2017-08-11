@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811115958) do
+ActiveRecord::Schema.define(version: 20170811130336) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -24,12 +24,26 @@ ActiveRecord::Schema.define(version: 20170811115958) do
     t.text "web_page"
   end
 
+  create_table "levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "offers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "title"
     t.text "description"
     t.text "location"
+  end
+
+  create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,11 +59,25 @@ ActiveRecord::Schema.define(version: 20170811115958) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "login"
-    t.text "first_name"
-    t.text "last_name"
+    t.string "login"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_technologies_levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "level_id"
+    t.bigint "technology_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_users_technologies_levels_on_level_id"
+    t.index ["technology_id"], name: "index_users_technologies_levels_on_technology_id"
+    t.index ["user_id"], name: "index_users_technologies_levels_on_user_id"
+  end
+
+  add_foreign_key "users_technologies_levels", "levels"
+  add_foreign_key "users_technologies_levels", "technologies"
+  add_foreign_key "users_technologies_levels", "users"
 end
