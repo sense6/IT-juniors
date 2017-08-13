@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812150732) do
+ActiveRecord::Schema.define(version: 20170813051409) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20170812150732) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "level_id"
+    t.bigint "technology_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_skills_on_level_id"
+    t.index ["technology_id"], name: "index_skills_on_technology_id"
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "skills_requierements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -86,21 +97,10 @@ ActiveRecord::Schema.define(version: 20170812150732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users_technologies_levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
-    t.bigint "level_id"
-    t.bigint "technology_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["level_id"], name: "index_users_technologies_levels_on_level_id"
-    t.index ["technology_id"], name: "index_users_technologies_levels_on_technology_id"
-    t.index ["user_id"], name: "index_users_technologies_levels_on_user_id"
-  end
-
+  add_foreign_key "skills", "levels"
+  add_foreign_key "skills", "technologies"
+  add_foreign_key "skills", "users"
   add_foreign_key "skills_requierements", "levels"
   add_foreign_key "skills_requierements", "offers"
   add_foreign_key "skills_requierements", "technologies"
-  add_foreign_key "users_technologies_levels", "levels"
-  add_foreign_key "users_technologies_levels", "technologies"
-  add_foreign_key "users_technologies_levels", "users"
 end
