@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813054203) do
+ActiveRecord::Schema.define(version: 20170813074540) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "name"
+    t.text "name", null: false
     t.text "description"
     t.string "phone"
     t.text "address"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170813054203) do
   end
 
   create_table "levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,24 +34,26 @@ ActiveRecord::Schema.define(version: 20170813054203) do
   create_table "offers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "title"
-    t.text "description"
+    t.text "title", null: false
+    t.text "description", null: false
     t.text "location"
-    t.bigint "role_id"
+    t.bigint "role_id", null: false
+    t.bigint "company_id", null: false
+    t.index ["company_id"], name: "index_offers_on_company_id"
     t.index ["role_id"], name: "index_offers_on_role_id"
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
-    t.bigint "level_id"
-    t.bigint "technology_id"
+    t.bigint "user_id", null: false
+    t.bigint "level_id", null: false
+    t.bigint "technology_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["level_id"], name: "index_skills_on_level_id"
@@ -60,9 +62,9 @@ ActiveRecord::Schema.define(version: 20170813054203) do
   end
 
   create_table "skills_requirements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "offer_id"
-    t.bigint "level_id"
-    t.bigint "technology_id"
+    t.bigint "offer_id", null: false
+    t.bigint "level_id", null: false
+    t.bigint "technology_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["level_id"], name: "index_skills_requirements_on_level_id"
@@ -71,7 +73,7 @@ ActiveRecord::Schema.define(version: 20170813054203) do
   end
 
   create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,12 +93,13 @@ ActiveRecord::Schema.define(version: 20170813054203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "login"
-    t.string "first_name"
+    t.string "first_name", null: false
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "offers", "companies"
   add_foreign_key "skills", "levels"
   add_foreign_key "skills", "technologies"
   add_foreign_key "skills", "users"
