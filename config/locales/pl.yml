@@ -1,12 +1,12 @@
 # Example:
-# en:
+# pl:
 #   activerecord:
 #     models:
-#       company: 'Company'
+#       company: 'Firma'
 #     attributes:
 #       company:
-#         name: 'Name'
-#         description: 'Description'
+#         name: 'Nazwa'
+#         description: 'Opis'
 #
 # Usage in views:
 #   <%= t 'activerecord.models.company' %>
@@ -14,18 +14,21 @@
 
 
 en:
+
+  
+  # -- Models
   activerecord:
     models:
-      company: "Company"
-      offer: "Offer"
+      company: "Firma"
+      offer: "Nazwa"
 
     attributes:
       company:
-        name: "Name"
+        name: "Opis"
 
 
   # -- Pages
   pages:
     index:
-      search: "Szukaj"
-      result: "Wyniki wyszukiwania"
+      search: "Search"
+      result: "Search result"
