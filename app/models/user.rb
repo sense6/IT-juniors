@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :skills
   has_many :technologies, through: :skills
   has_many :levels,       through: :skills
+
+  validates :first_name, presence: true
 end
