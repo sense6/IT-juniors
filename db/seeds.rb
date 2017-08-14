@@ -14,6 +14,18 @@ offers_count = 17
 technologies = %w(Ruby\ on\ Rails Node.JS JavaScript C# .NET C++ Java React.js Python Django HTML CSS Haskell Skala Backbone.JS)
 levels = %w(want\ to\ learn basic\ knowledge limited\ experience practical\ application applied\ theory)
 roles = %w(frontend backend fullstack PM QA)
+currencies = [{
+                symbol: "$",
+                short_name: "usd"
+              },
+              {
+                symbol: "€",
+                short_name: "eur"
+              },
+              {
+                symbol: "zł",
+                short_name: "pln"
+              }]
 
 if User.count < users_count
   puts "-- Creating users --"
@@ -87,16 +99,33 @@ roles.each do |role|
 end
 print("\n")
 
+puts "-- Creating currencies --"
+currencies.each do |currency|
+  unless Currency.find_by(symbol: currency[:symbol]).present?
+    Currency.create(
+    symbol: currency[:symbol],
+    short_name: currency[:short_name]
+    )
+    print('.')
+  end
+end
+print("\n")
+
 
 if Offer.count < offers_count
   puts "-- Creating offers --"
   offers_count.times do
+    salary_min = (rand(170)+ 30) * 100
+    salary_max = salary_min + (rand(15) + 1) * 200
     Offer.create(
     title: FFaker::Lorem.word.capitalize,
     description: FFaker::Lorem.paragraph,
     location: FFaker::Address.street_address,
     role: Role.order("RAND()").first,
-    company: Company.order("RAND()").first
+    company: Company.order("RAND()").first,
+    salary_min: salary_min,
+    salary_max: salary_max,
+    currency: Currency.order("RAND()").first
     )
     print('.')
   end
