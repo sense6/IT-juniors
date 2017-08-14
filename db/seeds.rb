@@ -63,51 +63,36 @@ end
 
 puts "-- Creating technologies --"
 technologies.each do |technology|
-  unless Technology.find_by(name: technology).present?
-    Technology.create(
-    name: technology,
-    description: FFaker::Lorem.paragraph
-    )
-    print('.')
-  end
+  Technology.create_with(description: FFaker::Lorem.paragraph)
+            .find_or_create_by(name: technology)
+  print('.')
 end
 print("\n")
 
 
 puts "-- Creating levels --"
 levels.each do |level|
-  unless Level.find_by(name: level).present?
-    Level.create(
-    name: level,
-    description: FFaker::Lorem.paragraph
-    )
-    print('.')
-  end
+  Level.create_with(description: FFaker::Lorem.paragraph)
+       .find_or_create_by(name: level)
+  print('.')
 end
 print("\n")
 
 
 puts "-- Creating roles --"
 roles.each do |role|
-  unless Role.find_by(name: role).present?
-    Role.create(
-    name: role,
-    description: FFaker::Lorem.paragraph
-    )
-    print('.')
-  end
+  Role.create_with(description: FFaker::Lorem.paragraph)
+      .find_or_create_by(name: role)
+  print('.')
 end
 print("\n")
 
+
 puts "-- Creating currencies --"
 currencies.each do |currency|
-  unless Currency.find_by(symbol: currency[:symbol]).present?
-    Currency.create(
-    symbol: currency[:symbol],
-    short_name: currency[:short_name]
-    )
-    print('.')
-  end
+  Currency.create_with(short_name: currency[:short_name])
+          .find_or_create_by(symbol: currency[:symbol])
+  print('.')
 end
 print("\n")
 
