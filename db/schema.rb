@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813074540) do
+ActiveRecord::Schema.define(version: 20170814050952) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20170813074540) do
     t.text "nip"
     t.text "krs"
     t.text "web_page"
+  end
+
+  create_table "currencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "symbol"
+    t.string "short_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,7 +46,11 @@ ActiveRecord::Schema.define(version: 20170813074540) do
     t.text "location"
     t.bigint "role_id", null: false
     t.bigint "company_id", null: false
+    t.integer "salary_min"
+    t.integer "salary_max"
+    t.bigint "currency_id"
     t.index ["company_id"], name: "index_offers_on_company_id"
+    t.index ["currency_id"], name: "index_offers_on_currency_id"
     t.index ["role_id"], name: "index_offers_on_role_id"
   end
 
@@ -95,6 +106,10 @@ ActiveRecord::Schema.define(version: 20170813074540) do
     t.string "login"
     t.string "first_name", null: false
     t.string "last_name"
+    t.string "github_name"
+    t.boolean "admin"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
