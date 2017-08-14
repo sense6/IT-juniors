@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20170814050952) do
     t.string "first_name", null: false
     t.string "last_name"
     t.string "github_name"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.bigint "company_id"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
