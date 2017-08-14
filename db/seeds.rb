@@ -12,8 +12,29 @@ users_count = 20
 companies_count = 10
 offers_count = 17
 technologies = %w(Ruby\ on\ Rails Node.JS JavaScript C# .NET C++ Java React.js Python Django HTML CSS Haskell Skala Backbone.JS)
-levels = %w(want\ to\ learn basic\ knowledge limited\ experience practical\ application applied\ theory)
 roles = %w(frontend backend fullstack PM QA)
+levels = [
+  {
+    en: "want to learn",
+    pl: "chcę się nauczyć"
+  },
+  {
+    en: "basic knowledge",
+    pl: "wiedza podstawowa"
+  },
+  {
+    en: "limited experience",
+    pl: "ograniczone doświadczenie"
+  },
+  {
+    en: "practical application",
+    pl: "wiedza praktyczna"
+  },
+  {
+    en: "applied theory",
+    pl: "zastosowanie teorii"
+  }
+]
 
 if User.count < users_count
   puts "-- Creating users --"
@@ -65,10 +86,15 @@ print("\n")
 puts "-- Creating levels --"
 levels.each do |level|
   unless Level.find_by(name: level).present?
-    Level.create(
-    name: level,
+    l = Level.create(
+    name: level[:en],
     description: FFaker::Lorem.paragraph
     )
+    I18n.locale = :pl
+    l[:name] = level[:pl]
+    l[:description] = FFaker::Lorem.paragraph
+    l.save!
+    I18n.locale = :en
     print('.')
   end
 end
