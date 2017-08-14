@@ -14,10 +14,13 @@
 
 
 en:
+  # -- Models
   activerecord:
     models:
       company: "Company"
-      offer: "Offer"
+      offer:
+        one: "Offer"
+        other: "Offers"
 
     attributes:
       company:

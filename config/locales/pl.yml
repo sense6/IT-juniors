@@ -13,14 +13,16 @@
 #   <%= t 'activerecord.attributes.company.name' %>
 
 
-en:
-
-  
+pl:
   # -- Models
   activerecord:
     models:
-      company: "Firma"
-      offer: "Nazwa"
+      company:
+        one: "Firma"
+        other: "Firmy"
+      offer:
+        one: "Oferta"
+        other: "Oferty"
 
     attributes:
       company:

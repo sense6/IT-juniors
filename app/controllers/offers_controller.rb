@@ -14,7 +14,7 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offers.all
+    @offers = Offer.all
   end
   def destroy
     @offer = Offer.find(params[:id]).destroy
