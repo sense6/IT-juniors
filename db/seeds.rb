@@ -94,7 +94,7 @@ print("\n")
 
 puts "-- Creating levels --"
 levels.each do |level|
-  unless Level.find_by(name: level).present?
+  unless Level.find_by(name: level[:en]).present?
     l = Level.create(
     name: level[:en],
     description: FFaker::Lorem.paragraph
