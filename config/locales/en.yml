@@ -26,7 +26,13 @@ en:
 
     attributes:
       company:
-        name: "Name"
+        name: "name"
+        description: "description"
+        phone: "phone"
+        address: "address"
+        nip: "nip"
+        krs: "krs"
+        web_page: "web page"
       offer:
         location: "Address"
         salary: "Salary"
@@ -38,3 +44,5 @@ en:
     index:
       search: "Szukaj"
       result: "Wyniki wyszukiwania"
+    companies:
+      all_companies_list: "all companies"
