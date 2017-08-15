@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'companies/show'
+
+  get 'companies/index'
+
   root to: 'offers#index'
   
   get 'offers/index'
