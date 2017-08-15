@@ -9,7 +9,7 @@
   ="#{offer.location}"
   %br/
   ="#{t 'activerecord.attributes.offer.salary'}: "
-  ="#{offer.salary_min.to_s}#{offer.currency.symbol} - #{offer.salary_max.to_s}#{offer.currency.symbol}"
+  ="#{offer.salary}"
 ="#{t 'activerecord.attributes.offer.skills_requirements'}: "
 = offer.skills_requirements.map{|skill| "#{skill.technology.name} (#{skill.level.name})"}.join(", ")
 %hr/
