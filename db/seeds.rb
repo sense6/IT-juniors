@@ -134,7 +134,7 @@ if Offer.count < offers_count
     salary_min = (rand(170)+ 30) * 100
     salary_max = salary_min + (rand(15) + 1) * 200
     Offer.create(
-    title: FFaker::Lorem.word.capitalize,
+    title: FFaker::Lorem.phrase.capitalize,
     description: FFaker::Lorem.paragraph,
     location: FFaker::Address.street_address,
     role: Role.order("RAND()").first,

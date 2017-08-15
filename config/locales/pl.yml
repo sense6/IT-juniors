@@ -27,6 +27,10 @@ pl:
     attributes:
       company:
         name: "Opis"
+      offer:
+        location: "Adres"
+        salary: "Wynagrodzenie"
+        skills_requirements: "Oczekujemy od kandydata"
 
 
   # -- Pages

@@ -1,8 +1,4 @@
 %h1 #{t 'activerecord.models.offer.other'}:
 %div
   - @offers.each do |offer|
-    %p
-      %strong= offer.title
-      =offer.description
-      %br/
-      ="#{offer.salary_min.to_s} - #{offer.salary_max.to_s}"
+    =render offer

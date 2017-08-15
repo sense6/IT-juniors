@@ -1,0 +1,13 @@
+%strong= offer.title
+%p
+  =offer.description
+  %br/
+  ="#{t 'activerecord.models.company.one'}: "
+  ="#{offer.company.name}"
+  %br/
+  ="#{t 'activerecord.attributes.offer.location'}: "
+  ="#{offer.location}"
+  %br/
+  ="#{t 'activerecord.attributes.offer.salary'}: "
+  ="#{offer.salary_min.to_s}#{offer.currency.symbol} - #{offer.salary_max.to_s}#{offer.currency.symbol}"
+  %hr/

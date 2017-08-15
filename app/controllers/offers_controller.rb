@@ -16,6 +16,7 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
   end
+  
   def destroy
     @offer = Offer.find(params[:id]).destroy
     flash[:success] = "Offer destroyed"
