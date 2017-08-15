@@ -3,7 +3,7 @@
   =offer.description
   %br/
   ="#{t 'activerecord.models.company.one'}: "
-  ="#{offer.company.name}"
+  =link_to "#{offer.company.name}", offer.company
   %br/
   ="#{t 'activerecord.attributes.offer.location'}: "
   ="#{offer.location}"

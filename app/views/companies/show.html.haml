@@ -1,2 +1,4 @@
-%h1 Companies#show
-%p Find me in app/views/companies/show.html.haml
+%span= link_to "#{t 'pages.companies.all_companies_list'}", companies_path
+%div=render @company
+%h2= "#{t 'activerecord.models.offer.other'}"
+%div=render @company.offers
