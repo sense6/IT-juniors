@@ -1,8 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
+@import "global/variables";
 
 body {
   background-color: #6688cc;
+  font-family: $devs-primary-sans;
 }
 
 .sign-up {
@@ -10,7 +13,7 @@ body {
   margin-left: 25%;
   margin-right: 25%;
   padding: 30px;
-  background-color: #ddd;
+  background-color: $devs-grey;
 
   h2 {
     margin-top: 0px;
@@ -19,9 +22,20 @@ body {
 
   .input {
     margin-top: 10px;
+    font-size: 16px;
   }
 }
 
 .form-actions {
   margin-top: 15px;
+}
+
+.btn-primary{
+   background-color: $devs-blue;
+   border-color: $devs-blue-light;
+   font-size: 16px;
+ }
+
+.navbar-brand{
+  font-size: 26px;
 }
