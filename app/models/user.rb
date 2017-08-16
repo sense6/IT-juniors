@@ -10,4 +10,13 @@ class User < ApplicationRecord
   belongs_to :company, optional: true
 
   validates :first_name, presence: true
+
+  def self.filter_users(search)
+    if search
+      User.joins(:technologies)
+           .where('name LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end
