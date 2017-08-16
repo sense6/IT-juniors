@@ -1,0 +1,14 @@
+@import '../global/variables';
+
+.footer {
+background-color: $devs-black;
+bottom: 0;
+width: 100%;
+height: auto;
+
+  .text-muted{
+    font-style: $devs-primary-sans;
+    font-size: 22px;
+    margin-left: 20px;
+  }
+}
