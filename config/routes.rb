@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/edit'
+
   root to: 'offers#index'
   resources :companies, :offers
 

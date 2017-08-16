@@ -49,21 +49,6 @@ levels = [
   }
 ]
 
-if User.count < users_count
-  puts "-- Creating users --"
-  users_count.times do
-    User.create(
-    first_name: FFaker::Name.first_name,
-    last_name: FFaker::Name.last_name,
-    email: FFaker::Internet.email,
-    login: rand(1) == 1 ? FFaker::Internet.user_name : nil,
-    password: FFaker::Internet.password
-    )
-    print('.')
-  end
-  print("\n")
-end
-
 
 if Company.count < companies_count
   puts "-- Creating companies --"
@@ -76,6 +61,23 @@ if Company.count < companies_count
     nip: rand(1) == 1 ? FFaker::SSN.ssn : nil,
     krs: rand(1) == 1 ? FFaker::SSNMX.imss_undashed : nil,
     web_page: FFaker::Internet.http_url
+    )
+    print('.')
+  end
+  print("\n")
+end
+
+
+if User.count < users_count
+  puts "-- Creating users --"
+  users_count.times do
+    User.create(
+    first_name: FFaker::Name.first_name,
+    last_name: FFaker::Name.last_name,
+    email: FFaker::Internet.email,
+    login: rand(1) == 1 ? FFaker::Internet.user_name : nil,
+    password: "123456",
+    company: (rand(4) == 0) ? Company.order("RAND()").first : nil
     )
     print('.')
   end

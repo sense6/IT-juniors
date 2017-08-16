@@ -50,6 +50,7 @@ en:
       result: "Search Results"
     companies:
       all_companies_list: "all companies"
+      edit: "edit"
 
   # -- Partials
   partials:

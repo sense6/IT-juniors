@@ -45,7 +45,8 @@ pl:
       search: "Szukaj"
       result: "Wyniki wyszukiwania"
     companies:
-      all_companies_list: "all companies"
+      all_companies_list: "wszystkie firmy"
+      edit: "edycja"
 
   # -- Partials
   partials:
