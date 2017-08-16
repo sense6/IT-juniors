@@ -1,0 +1,7 @@
+%section.section.section--offers
+  .container
+    .row
+      .col-md-12
+        .offers-list
+          - @offers.each do |offer|
+            =render offer

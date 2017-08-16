@@ -1,0 +1,53 @@
+# Example:
+# pl:
+#   activerecord:
+#     models:
+#       company: 'Firma'
+#     attributes:
+#       company:
+#         name: 'Nazwa'
+#         description: 'Opis'
+#
+# Usage in views:
+#   <%= t 'activerecord.models.company' %>
+#   <%= t 'activerecord.attributes.company.name' %>
+
+
+pl:
+  # -- Models
+  activerecord:
+    models:
+      company:
+        one: "Firma"
+        other: "Firmy"
+      offer:
+        one: "Oferta"
+        other: "Oferty"
+
+    attributes:
+      company:
+        name: "nazwa"
+        description: "opis"
+        phone: "tel."
+        address: "adres"
+        nip: "nip"
+        krs: "krs"
+        web_page: "strona www"
+      offer:
+        location: "Adres"
+        salary: "Wynagrodzenie"
+        skills_requirements: "Oczekujemy od kandydata"
+
+
+  # -- Pages
+  pages:
+    index:
+      search: "Szukaj"
+      result: "Wyniki wyszukiwania"
+    companies:
+      all_companies_list: "all companies"
+
+  # -- Partials
+  partials:
+    offer:
+      view: "Sprawdź ofertę"

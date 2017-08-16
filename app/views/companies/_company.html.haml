@@ -1,0 +1,13 @@
+%h1= @company.name
+%strong= @company.description
+%div
+  %span="#{t 'activerecord.attributes.company.address'}: #{@company.address}"
+  %br/
+  %span="#{t 'activerecord.attributes.company.phone'}: #{@company.phone}"
+  %br/
+  %span="#{t 'activerecord.attributes.company.nip'}: #{@company.nip}"
+  %br/
+  %span="#{t 'activerecord.attributes.company.krs'}: #{@company.krs}"
+  %br/
+  %span="#{t 'activerecord.attributes.company.web_page'}: #{@company.web_page}"
+  %br/

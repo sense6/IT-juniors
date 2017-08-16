@@ -1,0 +1,17 @@
+%article.offer
+  .offer__details
+    .offer__details__location
+      ="#{offer.location}"
+    .offer__details__salary
+      ="#{offer.min_salary}"
+  %h1.offer__title= offer.title
+  %h2.offer__company=link_to "#{offer.company.name}", offer.company
+  %div.skills
+    - offer.skills_requirements.each do |skill|
+      .skill__item
+        = skill.technology.name
+
+  %div.offer__description
+    =offer.short_desc
+  %div.offer__view
+    =link_to "#{t 'partials.offer.view'}", offer
