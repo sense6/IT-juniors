@@ -1,16 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "global/variables";
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
+@import "partials/sign-up";
+@import "partials/offer";
+@import "partials/skills";
+@import "partials/footer";
 
 body {
   font-family: $devs-primary-sans;
 }
 
-@import "views/registration";
+.btn-primary{
+   background-color: $devs-blue;
+   border-color: $devs-blue-light;
+   font-size: 16px;
+ }
 
-@import "partials/offer";
-@import "partials/skills";
-@import "partials/sign-up";
+.navbar-brand{
+  font-size: 26px;
+}
