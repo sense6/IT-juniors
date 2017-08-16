@@ -17,7 +17,7 @@ en:
   hello: "Hello world"
   registration:
     signup: "Sign Up Dev!"
-    
+
   # -- Models
   activerecord:
     models:
@@ -50,3 +50,4 @@ en:
       result: "Wyniki wyszukiwania"
     companies:
       all_companies_list: "all companies"
+      edit: "edit"

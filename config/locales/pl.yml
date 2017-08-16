@@ -46,3 +46,4 @@ pl:
       result: "Search result"
     companies:
       all_companies_list: "wszystkie firmy"
+      edit: "edycja"
