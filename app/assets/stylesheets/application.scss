@@ -5,23 +5,23 @@ body {
   background-color: #6688cc;
 }
 
-div.sign-up {
+.sign-up {
   margin-top: 80px;
   margin-left: 25%;
   margin-right: 25%;
   padding: 30px;
   background-color: #ddd;
+
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+
+  .input {
+    margin-top: 10px;
+  }
 }
 
-div.sign-up h2 {
-  margin-top: 0px;
-  margin-bottom: 30px;
-}
-
-div.sign-up div.input {
-  margin-top: 10px;
-}
-
-div.form-actions {
+.form-actions {
   margin-top: 15px;
 }
