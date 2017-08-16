@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :skills,       dependent: :destroy
   has_many :technologies, through: :skills
   has_many :levels,       through: :skills
+  belongs_to :company, optional: true
 
   validates :first_name, presence: true
 end
