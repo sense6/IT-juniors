@@ -1,15 +1,17 @@
-%strong= offer.title
-%p
-  =offer.description
-  %br/
-  ="#{t 'activerecord.models.company.one'}: "
-  =link_to "#{offer.company.name}", offer.company
-  %br/
-  ="#{t 'activerecord.attributes.offer.location'}: "
-  ="#{offer.location}"
-  %br/
-  ="#{t 'activerecord.attributes.offer.salary'}: "
-  ="#{offer.salary}"
-="#{t 'activerecord.attributes.offer.skills_requirements'}: "
-= offer.skills_requirements.map{|skill| "#{skill.technology.name} (#{skill.level.name})"}.join(", ")
-%hr/
+%article.offer
+  .offer__details
+    .offer__details__location
+      ="#{offer.location}"
+    .offer__details__salary
+      ="#{offer.min_salary}"
+  %h1.offer__title= offer.title
+  %h2.offer__company=link_to "#{offer.company.name}", offer.company
+  %div.skills
+    - offer.skills_requirements.each do |skill|
+      .skill__item
+        = skill.technology.name
+
+  %div.offer__description
+    =offer.short_desc
+  %div.offer__view
+    =link_to "#{t 'partials.offer.view'}", offer
