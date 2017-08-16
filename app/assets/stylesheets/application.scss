@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
 @import "global/variables";
 @import "partials/sign-up";
+@import "partials/offer";
+@import "partials/skills";
+@import "partials/footer";
 
 body {
   background-color: #6688cc;
@@ -18,6 +21,3 @@ body {
 .navbar-brand{
   font-size: 26px;
 }
-
-@import "partials/offer";
-@import "partials/skills";
