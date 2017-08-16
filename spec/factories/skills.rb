@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :users_technologies_level do
+  factory :skill do
     user nil
     level nil
     technology nil

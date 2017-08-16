@@ -1,0 +1,4 @@
+%span= link_to "#{t 'pages.companies.all_companies_list'}", companies_path
+%div=render @company
+%h2= "#{t 'activerecord.models.offer.other'}"
+%div=render @company.offers
