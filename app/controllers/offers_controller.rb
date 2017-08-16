@@ -14,7 +14,8 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all.decorate
+    @offers = Offer.filter_technologies(params[:search]).decorate
+
   end
 
   def destroy

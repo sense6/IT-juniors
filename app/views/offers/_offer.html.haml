@@ -9,8 +9,7 @@
   %div.skills
     - offer.skills_requirements.each do |skill|
       .skill__item
-        = skill.technology.name
-
+        =link_to "#{skill.technology.name}", controller: "offers", action: "index", :search => skill.technology.name 
   %div.offer__description
     =offer.short_desc
   %div.offer__view
