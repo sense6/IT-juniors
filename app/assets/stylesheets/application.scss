@@ -2,32 +2,11 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
 @import "global/variables";
+@import "partials/sign-up";
 
 body {
   background-color: #6688cc;
   font-family: $devs-primary-sans;
-}
-
-.sign-up {
-  margin-top: 80px;
-  margin-left: 25%;
-  margin-right: 25%;
-  padding: 30px;
-  background-color: $devs-grey;
-
-  h2 {
-    margin-top: 0px;
-    margin-bottom: 30px;
-  }
-
-  .input {
-    margin-top: 10px;
-    font-size: 16px;
-  }
-}
-
-.form-actions {
-  margin-top: 15px;
 }
 
 .btn-primary{
