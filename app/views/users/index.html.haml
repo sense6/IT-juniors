@@ -1,4 +1,5 @@
 %h1 Users
+= render partial: "search_bar"
 %div
   - @users.each do |user|
-    %div= user.email
+    =render user
