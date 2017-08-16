@@ -5,26 +5,26 @@
   min-height: 500px;
   align-items: center;
   justify-content: center;
-  background-color: $devs-primary-dark;
+  background-color: $devs-black;
 
   &__title {
     text-align: center;
     margin: 20px 0 5px;
-    color: $devs-primary-dark;
+    color: $devs-black;
     &::after {
       content: '';
       display: block;
       width: 100px;
       height: 3px;
       margin: 30px auto 15px;
-      background-color: $devs-primary-dark;
+      background-color: $devs-black;
 
     }
   }
 }
 
 .registration-container {
-  background-color: $devs-primary-white;
+  background-color: $devs-white;
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;

@@ -1,5 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "global/variables";
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
+
+body {
+  font-family: $devs-primary-sans;
+}
 
 @import "views/registration";
+
+@import "partials/offer";
+@import "partials/skills";

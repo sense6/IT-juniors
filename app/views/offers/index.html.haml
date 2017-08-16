@@ -1,6 +1,9 @@
 %h1 #{t 'activerecord.models.offer.other'}:
-%div
-  = render partial: "search_bar"
-%div
-  - @offers.each do |offer|
-    =render offer
+= render partial: "search_bar"
+%section.section.section--offers
+  .container
+    .row
+      .col-md-12
+        .offers-list
+          - @offers.each do |offer|
+            =render offer
