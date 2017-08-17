@@ -11,7 +11,7 @@ class Offer < ApplicationRecord
   def self.filter_technologies(search)
     if search
       Offer.joins(:technologies)
-           .where('name LIKE ?', "%#{search}%")
+           .where('technologies.name LIKE ? OR offers.title LIKE ? OR offers.description LIKE ? OR offers.location LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%").distinct
     else
       all
     end

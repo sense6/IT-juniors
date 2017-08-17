@@ -9,6 +9,11 @@
   background-image: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/0KAT80KW5F.jpg');
   position: relative;
   background-size: cover;
+  background-position: center;
+
+  &--users {
+    background-image: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/DVX3DBZHIT.jpg');
+  }
 
   &::before {
     content: '';
