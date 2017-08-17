@@ -1,25 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "global/variables";
-@import "partials/sign-up";
-@import "partials/offer";
-@import "partials/skills";
-@import "partials/footer";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,600');
 
 body {
   font-family: $devs-primary-sans;
 }
 
-.btn-primary{
-   background-color: $devs-blue;
-   border-color: $devs-blue-light;
-   font-size: 16px;
- }
+@import "views/registration";
 
-.navbar-brand{
-  font-size: 26px;
-}
-
-.content{
-  margin-top: 80px;
-}
+@import "partials/offer";
+@import "partials/skills";
+@import "partials/sign-up";
+@import "partials/searchbar";
+@import "partials/footer";

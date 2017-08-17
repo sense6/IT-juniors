@@ -1,5 +1,9 @@
-%h2 search bar for devs
-%div
-  = form_tag offers_path, method: :get do
-    = text_field_tag :search, params[:search]
-    = submit_tag "search"
+%section.searchbar
+  .container
+    .row
+      .col-md-12
+        %h2.searchbar__title= "#{t 'partials.searchbar.title'}"
+        %div.searchbar__form
+          = form_tag offers_path, method: :get do
+            = text_field_tag :search, params[:search]
+            = submit_tag "search"

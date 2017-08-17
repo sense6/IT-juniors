@@ -55,3 +55,6 @@ pl:
     offer:
       view: "Sprawdź ofertę"
       apply: "Aplikuj"
+
+    searchbar:
+      title: "Znajdź oferty dla Junior Deweloperów"

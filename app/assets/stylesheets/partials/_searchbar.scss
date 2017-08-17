@@ -1,0 +1,26 @@
+@import '../global/variables';
+
+.searchbar {
+  min-height: 500px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/0KAT80KW5F.jpg');
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: rgba($devs-black, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    text-align: center;
+    color: $devs-white;
+  }
+}
