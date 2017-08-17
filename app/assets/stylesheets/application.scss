@@ -9,13 +9,9 @@ body {
   font-family: $devs-primary-sans;
 }
 
-html,body{
-  height: 100%;
-  width: 100%;
-}
-
 @import "views/registration";
 @import "views/homepage";
+@import "views/single-offer";
 
 @import "partials/offer";
 @import "partials/skills";
@@ -23,3 +19,4 @@ html,body{
 @import "partials/searchbar";
 @import "partials/navbar";
 @import "partials/footer";
+@import "partials/hero";

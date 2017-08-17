@@ -1,0 +1,117 @@
+@import '../global/variables';
+.single-offer {
+  margin-top: 70px;
+  &__hero {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/T9AY19HFC0.jpg');
+    &::before {
+      content: '';
+      background-color: rgba($devs-black, 0.8);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__content {
+      position: relative;
+    }
+
+    &__title {
+      text-align: center;
+      color: $devs-white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    font-size: 16px;
+    letter-spacing: 0.015em;
+    line-height: 20px;
+    font-weight: 300;
+  }
+
+  &__back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    a {
+      color: white;
+      border: 2px solid white;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 3px 12px;
+      text-decoration: none;
+      transition: 0.3s ease-out;
+      &:focus, &:hover {
+        text-decoration: none;
+        color: $devs-blue;
+        border-color: $devs-blue;
+      }
+    }
+  }
+
+  &__title {
+    color: $devs-black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__section {
+    min-height: calc(100% - 300px - 54px - 70px);
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+  }
+
+  &__details {
+    padding: 15px;
+    border: 2px solid $devs-black;
+    border-radius: 5px;
+    &__company {
+      color: $devs-blue;
+      font-size: 18px;
+    }
+    &__salary {
+      color: $devs-black;
+      font-size: 16px;
+    }
+
+    &__address {
+      color: $devs-black;
+      font-size: 16px;
+    }
+  }
+
+  &__apply {
+    font-size: 18px;
+    color: $devs-green;
+    font-weight: bold;
+    border: 2px solid $devs-green;
+    display: inline-block;
+    padding: 5px 12px;
+    width: 60%;
+    margin: 20px auto 0;
+    border-radius: 50px;
+    text-align: center;
+    transition: all 0.3s ease-out;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      color: white;
+      background-color: $devs-green;
+
+    }
+  }
+}
