@@ -6,5 +6,6 @@
         %h2.searchbar__subtitle= "#{t 'partials.searchbar.subtitle'}"
         %div.searchbar__form
           = form_tag offers_path, method: :get do
-            = text_field_tag :search, params[:search]
-            = submit_tag "search"
+            = text_field_tag :search, params[:search], {:class => "searchbar__form__search"}
+            %button.searchbar__form__submit
+              ="#{t 'partials.searchbar.search'}"
