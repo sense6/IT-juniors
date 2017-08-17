@@ -5,6 +5,8 @@ class SkillsController < ApplicationController
   end
 
   def destroy
-
+    @skill = Skill.find_by(user_id: params[:user_id],technology_id: params[:technology_id])
+    @skill.destroy
+    redirect_to request.referer
   end
 end

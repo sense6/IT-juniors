@@ -10,6 +10,12 @@
   %p
     = f.submit
 
+%h2 My skills:
+- @user.technologies.each do |f|
+  = f.name
+  = link_to "delete from skills", skills_destroy_path(user_id: @user.id,technology_id: f.id)
+
+%h3 Add skills:
 - @technologies.each do |f|
   = f.name
   = link_to "add to skills", skills_create_path(user_id: @user.id, technology_id: f.id, level_id: 1)
