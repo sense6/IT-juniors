@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @technologies = Technology.where("id NOT IN (?)", @user.technologies.map {|t| t.id})
+    @technologies = Technology.filter_tech(@user)
   end
 
   def update
