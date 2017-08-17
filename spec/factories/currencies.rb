@@ -1,6 +1,11 @@
 FactoryGirl.define do
   factory :currency do
-    symbol "MyString"
-    short_name "MyString"
+    symbol "E"
+    short_name "EUR"
+
+    trait :usd do
+      symbol "$"
+      short_name "usd"
+    end
   end
 end
