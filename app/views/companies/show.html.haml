@@ -1,4 +1,10 @@
-%span= link_to "#{t 'pages.companies.all_companies_list'}", companies_path
-%div=render @company
-%h2= "#{t 'activerecord.models.offer.other'}"
-%div=render @company.offers
+%section.single-offer.section
+  %div.single-offer__hero
+    %span.single-offer__back= link_to "#{t 'pages.companies.all_companies_list'}", companies_path
+    %div.single-offer__hero__content
+      %h1.single-offer__hero__title= @company.name
+
+%div.container.content
+  %div=render @company
+  %h2.text-center= "#{t 'activerecord.models.offer.other'}"
+  %div=render @company.offers
