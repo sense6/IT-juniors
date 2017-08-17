@@ -1,4 +1,11 @@
 @import '../global/variables';
+.company-section .single-offer__hero {
+  padding: 100px 0 40px;
+}
+
+.margin-top {
+  margin-top: 100px;
+}
 .single-offer {
   margin-top: 70px;
   &__hero {
@@ -27,6 +34,16 @@
       color: $devs-white;
       font-size: 30px;
       font-weight: bold;
+    }
+
+    &__details {
+      text-align: center;
+      color: $devs-white;
+      font-size: 18px;
+
+      p {
+        max-width: 700px;
+      }
     }
   }
 

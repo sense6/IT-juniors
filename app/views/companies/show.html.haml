@@ -1,10 +1,12 @@
-%section.single-offer.section
+%section.single-offer.section.company-section
   %div.single-offer__hero
     %span.single-offer__back= link_to "#{t 'pages.companies.all_companies_list'}", companies_path
     %div.single-offer__hero__content
       %h1.single-offer__hero__title= @company.name
+      %div.single-offer__hero__details=render @company
 
-%div.container.content
-  %div=render @company
-  %h2.text-center= "#{t 'activerecord.models.offer.other'}"
-  %div=render @company.offers
+%div.container
+  .row
+    .col-md-12
+      %h2.text-center.margin-top= "#{t 'activerecord.models.offer.other'}"
+      %div.offers-list.offers-list--company=render @company.offers

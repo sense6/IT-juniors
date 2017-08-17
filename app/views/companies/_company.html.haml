@@ -1,13 +1,15 @@
-%h1= @company.name
-%strong= @company.description
-%div
+%p= @company.description
+%div.company-details-box
   %span="#{t 'activerecord.attributes.company.address'}: #{@company.address}"
   %br/
   %span="#{t 'activerecord.attributes.company.phone'}: #{@company.phone}"
-  %br/
-  %span="#{t 'activerecord.attributes.company.nip'}: #{@company.nip}"
-  %br/
-  %span="#{t 'activerecord.attributes.company.krs'}: #{@company.krs}"
+  - if @company.nip.present?
+    %br/
+    %span="#{t 'activerecord.attributes.company.nip'}: #{@company.nip}"
+
+  - if @company.krs.present?
+    %br/
+    %span="#{t 'activerecord.attributes.company.krs'}: #{@company.krs}"
   %br/
   %span="#{t 'activerecord.attributes.company.web_page'}: #{@company.web_page}"
   %br/
