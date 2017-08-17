@@ -51,8 +51,11 @@ en:
     companies:
       all_companies_list: "all companies"
       edit: "edit"
+    offers:
+      all_offers_list: "all offers"
 
   # -- Partials
   partials:
     offer:
       view: "View Job"
+      apply: "Apply"

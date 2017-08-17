@@ -5,9 +5,8 @@ class Ability
     user ||= User.new
 
     if user.company.present?
-      can :manage, Company, id: user.company_id
+      can :edit, Company, id: user.company_id
     end
     can :read, :all
-    
   end
 end

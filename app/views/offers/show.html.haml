@@ -1,2 +1,19 @@
-%h1 Offers#show
-%p Find me in app/views/offers/show.html.haml
+%span= link_to "#{t 'pages.offers.all_offers_list'}", offers_path
+
+%article
+  .offer__details
+  %h1.offer__title= @offer.title
+  %h2.offer__company=link_to "#{@offer.company.name}", @offer.company
+  .offer__details__salary
+  %strong="#{@offer.salary}"
+  %br/
+  %span="#{t 'activerecord.attributes.company.address'}: #{@offer.location}"
+  %div.offer__description
+  =@offer.description
+  %div.skills
+    - @offer.skills_requirements.each do |skill|
+      .skill__item
+        =link_to "#{skill.technology.name}", controller: "offers", action: "index", :search => skill.technology.name
+
+  %div.offer__view
+    =link_to "#{t 'partials.offer.apply'}", "#"

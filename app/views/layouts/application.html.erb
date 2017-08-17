@@ -32,16 +32,9 @@
          </div><!--/.navbar-collapse -->
        </div>
      </nav>
-    <%= yield %>
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <!-- <%= debug(params) if Rails.env.development? %> -->
-        </div>
-      </div>
-    </div>
+     <div class="container content">
+       <%= yield %>
+     </div>
 
     <div class="footer">
         <span class="text-muted">&copy; Charlie Project NCC</span>
