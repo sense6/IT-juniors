@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @technologies = Technology.filter_tech(@user)
+    @levels = Level.all.map{|u| [u.name, u.id]}
   end
 
   def update
