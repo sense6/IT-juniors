@@ -1,12 +1,13 @@
 = render partial: "search_bar"
-%section.section.section--offers
-  .container
-    .row
-      .col-md-12
-        - if @offers.present?
+
+- if @offers.present?
+  %section.section.section--offers
+    .container
+      .row
+        .col-md-12
           .offers-list
             - @offers.each do |offer|
               =render offer
-        - else
-          .not-found
-            .not-found__content="#{t 'pages.offers.not_found'}"
+- else
+  .not-found
+    .not-found__content="#{t 'pages.offers.not_found'}"

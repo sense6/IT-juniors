@@ -1,12 +1,14 @@
 @import '../global/variables';
 
 .not-found {
-  padding: 100px 0;
   width: 100%;
+  min-height: calc(100% - 300px - 54px - 70px);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__content {
     max-width: 550px;
-    margin: 0 auto;
     font-size: 22px;
   }
 }
