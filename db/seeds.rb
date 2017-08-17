@@ -60,7 +60,8 @@ if Company.count < companies_count
       address: FFaker::Address.street_address,
       nip: rand(1) == 1 ? FFaker::SSN.ssn : nil,
       krs: rand(1) == 1 ? FFaker::SSNMX.imss_undashed : nil,
-      web_page: FFaker::Internet.http_url
+      web_page: FFaker::Internet.http_url,
+      email: FFaker::Internet.email
     )
     print('.')
   end
