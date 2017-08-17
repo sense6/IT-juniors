@@ -1,19 +1,26 @@
-%span= link_to "#{t 'pages.offers.all_offers_list'}", offers_path
+%section.single-offer.section
+  %div.single-offer__hero
+    %span.single-offer__back= link_to "#{t 'pages.offers.go_back'}", offers_path
+    %div.single-offer__hero__content
+      %h1.single-offer__hero__title= @offer.title
+      %div.skills
+        - @offer.skills_requirements.each do |skill|
+          =link_to "#{skill.technology.name} | #{skill.level.name}", {:controller => "offers", :action => "index", :search => skill.technology.name}, class: "skill__item skill__item--white"
 
-%article
-  .offer__details
-  %h1.offer__title= @offer.title
-  %h2.offer__company=link_to "#{@offer.company.name}", @offer.company
-  .offer__details__salary
-  %strong="#{@offer.salary}"
-  %br/
-  %span="#{t 'activerecord.attributes.company.address'}: #{@offer.location}"
-  %div.offer__description
-  =@offer.description
-  %div.skills
-    - @offer.skills_requirements.each do |skill|
-      .skill__item
-        =link_to "#{skill.technology.name} | #{skill.level.name}", controller: "offers", action: "index", :search => skill.technology.name
+  %section.single-offer__section
+    .container
+      .row
+        .col-md-9
+          .single-offer__description
+            %h2.single-offer__title="#{t 'pages.offers.description'}"
+            %p.single-offer__content
+              =@offer.description
 
-  %div.offer__view
-    =link_to "#{t 'partials.offer.apply'}", "#"
+        .col-md-3
+          .single-offer__details
+            %h2.single-offer__title="#{t 'pages.offers.offer_details'}"
+            %h3.single-offer__details__company=link_to "#{@offer.company.name}", @offer.company
+            %h3.single-offer__details__salary="#{@offer.salary}"
+            %div.single-offer__details__address="#{t 'activerecord.attributes.company.address'}: #{@offer.location}"
+            .text-center
+              =link_to "#{t 'partials.offer.apply'}", "#", class: "single-offer__apply"
