@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :companies, :offers
 
   get 'skills/create'
+  get 'skills/destroy'
 
   devise_for :users
 
