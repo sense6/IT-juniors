@@ -1,0 +1,12 @@
+@import '../global/variables';
+
+.not-found {
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  &__content {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 22px;
+  }
+}

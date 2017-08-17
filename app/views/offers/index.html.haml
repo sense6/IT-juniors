@@ -3,6 +3,10 @@
   .container
     .row
       .col-md-12
-        .offers-list
-          - @offers.each do |offer|
-            =render offer
+        - if @offers.present?
+          .offers-list
+            - @offers.each do |offer|
+              =render offer
+        - else
+          .not-found
+            .not-found__content="#{t 'pages.offers.not_found'}"

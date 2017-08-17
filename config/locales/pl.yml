@@ -49,6 +49,7 @@ pl:
       edit: "edycja"
     offers:
       all_offers_list: "wszystkie oferty"
+      not_found: "Przykro nam, niestety nie znaleźliśmy żadnej oferty, która spełnia twoje kryteria wyszukiwania."
 
   # -- Partials
   partials:

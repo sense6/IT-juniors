@@ -1,0 +1,13 @@
+@import '../global/variables';
+
+.footer {
+  background-color: $devs-black;
+  padding: 20px 0;
+  text-align: center;
+  color: $devs-white;
+  font-size: 18px;
+
+  &__copyright {
+    font-size: 10px;
+  }
+}

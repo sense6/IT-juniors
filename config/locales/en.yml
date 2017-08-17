@@ -53,6 +53,7 @@ en:
       edit: "edit"
     offers:
       all_offers_list: "all offers"
+      not_found: "We're sorry, there's seem to be no offers matching your criteria"
 
   # -- Partials
   partials:
