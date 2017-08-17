@@ -3,7 +3,7 @@
     .row
       .col-md-12
         .registration-container
-          %h2.login__title #{t('registration.signup')}
+          %h1.login__title #{t('registration.signup')}
           = simple_form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f|
             = f.error_notification
             .form-inputs

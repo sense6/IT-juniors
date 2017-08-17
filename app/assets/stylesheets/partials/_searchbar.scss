@@ -8,6 +8,7 @@
   align-items: center;
   background-image: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/0KAT80KW5F.jpg');
   position: relative;
+  background-size: cover;
 
   &::before {
     content: '';
@@ -22,5 +23,17 @@
   &__title {
     text-align: center;
     color: $devs-white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: $devs-white;
+    font-size: 20px;
+  }
+
+  &__form {
+    width: 100%;
   }
 }

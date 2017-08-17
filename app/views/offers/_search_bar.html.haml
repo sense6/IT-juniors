@@ -2,7 +2,8 @@
   .container
     .row
       .col-md-12
-        %h2.searchbar__title= "#{t 'partials.searchbar.title'}"
+        %h1.searchbar__title= "#{t 'partials.searchbar.title'}"
+        %h2.searchbar__subtitle= "#{t 'partials.searchbar.subtitle'}"
         %div.searchbar__form
           = form_tag offers_path, method: :get do
             = text_field_tag :search, params[:search]
