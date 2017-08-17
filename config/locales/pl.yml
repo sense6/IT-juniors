@@ -14,6 +14,7 @@
 
 
 pl:
+  ad: "Chcesz dodać ogłoszenie napisz na offers@itjuniors.com"
   # -- Models
   activerecord:
     models:
