@@ -29,7 +29,7 @@ pl:
         name: "nazwa"
         description: "opis"
         phone: "tel."
-        address: "adres"
+        address: "Adres"
         nip: "nip"
         krs: "krs"
         web_page: "strona www"
@@ -50,6 +50,9 @@ pl:
     offers:
       all_offers_list: "wszystkie oferty"
       not_found: "Przykro nam, niestety nie znaleźliśmy żadnej oferty, która spełnia twoje kryteria wyszukiwania."
+      go_back: "Zobacz inne oferty"
+      description: "Opis stanowiska"
+      offer_details: "Szczegóły oferty"
 
   # -- Partials
   partials:

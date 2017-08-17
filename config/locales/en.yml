@@ -33,7 +33,7 @@ en:
         name: "name"
         description: "description"
         phone: "phone"
-        address: "address"
+        address: "Address"
         nip: "nip"
         krs: "krs"
         web_page: "web page"
@@ -54,6 +54,9 @@ en:
     offers:
       all_offers_list: "all offers"
       not_found: "We're sorry, there's seem to be no offers matching your criteria"
+      go_back: "Back to all offers"
+      description: "Position description"
+      offer_details: "Offer Details"
 
   # -- Partials
   partials:
