@@ -2,10 +2,10 @@
   .container
     .row
       .col-md-12
-        %h1.searchbar__title= "#{t 'partials.searchbar.title'}"
-        %h2.searchbar__subtitle= "#{t 'partials.searchbar.subtitle'}"
+        %h1.searchbar__title= "#{t 'partials.searchbar.title2'}"
+        %h2.searchbar__subtitle= "#{t 'partials.searchbar.subtitle2'}"
         %div.searchbar__form
           = form_tag users_path, method: :get do
-            = text_field_tag :search, params[:search], {:class => "searchbar__form__search"}
+            = text_field_tag :search2, params[:search], {:class => "searchbar__form__search"}
             %button.searchbar__form__submit
-              ="#{t 'partials.searchbar.search'}"
+              ="#{t 'partials.searchbar.search2'}"
