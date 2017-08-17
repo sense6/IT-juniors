@@ -23,9 +23,5 @@ RSpec.describe CompaniesController, type: :controller do
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
-
-    it 'should be decorated' do
-      assigns(:company).should be_decorated
-    end
   end
 end

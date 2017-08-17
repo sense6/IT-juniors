@@ -9,11 +9,7 @@ class Offer < ApplicationRecord
   validates :title, :description, :role, :company, presence: true
 
   def self.filter_technologies(search)
-    if search
-      Offer.joins(:technologies)
-           .where('name LIKE ?', "%#{search}%")
-    else
-      all
-    end
+    return all unless search.present?
+    Offer.joins(:technologies).where('name LIKE ?', "%#{search}%")
   end
 end
