@@ -10,6 +10,6 @@
   %p
     = f.submit
 
-= @technologies.each do |f|
+- @technologies.each do |f|
   = f.name
   = link_to "add to skills", skills_create_path(user_id: @user.id, technology_id: f.id, level_id: 1)
