@@ -1,6 +1,12 @@
-%h1 Users
 = render partial: "search_bar"
-%div
-  - @users.each do |user|
-    =render user
-    
+
+- if @users.present?
+  .container
+    .row
+      .col-md-12
+        %section.user-list
+          - @users.each do |user|
+            =render user
+- else
+  .not-found
+    .not-found__content="#{t 'pages.offers.not_found'}"

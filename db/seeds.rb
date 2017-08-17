@@ -54,13 +54,13 @@ if Company.count < companies_count
   puts "-- Creating companies --"
   companies_count.times do
     Company.create(
-    name: FFaker::Lorem.word.capitalize,
-    description: FFaker::Lorem.paragraph,
-    phone: FFaker::PhoneNumber.phone_number,
-    address: FFaker::Address.street_address,
-    nip: rand(1) == 1 ? FFaker::SSN.ssn : nil,
-    krs: rand(1) == 1 ? FFaker::SSNMX.imss_undashed : nil,
-    web_page: FFaker::Internet.http_url
+      name: FFaker::Lorem.word.capitalize,
+      description: FFaker::Lorem.paragraph,
+      phone: FFaker::PhoneNumber.phone_number,
+      address: FFaker::Address.street_address,
+      nip: rand(1) == 1 ? FFaker::SSN.ssn : nil,
+      krs: rand(1) == 1 ? FFaker::SSNMX.imss_undashed : nil,
+      web_page: FFaker::Internet.http_url
     )
     print('.')
   end
@@ -72,12 +72,12 @@ if User.count < users_count
   puts "-- Creating users --"
   users_count.times do
     User.create(
-    first_name: FFaker::Name.first_name,
-    last_name: FFaker::Name.last_name,
-    email: FFaker::Internet.email,
-    login: rand(1) == 1 ? FFaker::Internet.user_name : nil,
-    password: "123456",
-    company: (rand(4) == 0) ? Company.order("RAND()").first : nil
+      first_name: FFaker::Name.first_name,
+      last_name: FFaker::Name.last_name,
+      email: FFaker::Internet.email,
+      login: rand(1) == 1 ? FFaker::Internet.user_name : nil,
+      password: "123456",
+      company: (rand(4) == 0) ? Company.order("RAND()").first : nil
     )
     print('.')
   end
@@ -98,8 +98,8 @@ puts "-- Creating levels --"
 levels.each do |level|
   unless Level.find_by(name: level[:en]).present?
     l = Level.create(
-    name: level[:en],
-    description: FFaker::Lorem.paragraph
+      name: level[:en],
+      description: FFaker::Lorem.paragraph
     )
     I18n.locale = :pl
     l[:name] = level[:pl]
@@ -136,14 +136,14 @@ if Offer.count < offers_count
     salary_min = (rand(170)+ 30) * 100
     salary_max = salary_min + (rand(15) + 1) * 200
     Offer.create(
-    title: FFaker::Lorem.phrase.capitalize,
-    description: FFaker::Lorem.paragraph,
-    location: FFaker::Address.street_address,
-    role: Role.order("RAND()").first,
-    company: Company.order("RAND()").first,
-    salary_min: salary_min,
-    salary_max: salary_max,
-    currency: Currency.order("RAND()").first
+      title: FFaker::Lorem.phrase.capitalize,
+      description: FFaker::Lorem.paragraph,
+      location: FFaker::Address.street_address,
+      role: Role.order("RAND()").first,
+      company: Company.order("RAND()").first,
+      salary_min: salary_min,
+      salary_max: salary_max,
+      currency: Currency.order("RAND()").first
     )
     print('.')
   end
