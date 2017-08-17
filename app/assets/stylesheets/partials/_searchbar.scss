@@ -1,7 +1,7 @@
 @import '../global/variables';
 
 .searchbar {
-  min-height: 500px;
+  min-height: 300px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -34,6 +34,48 @@
   }
 
   &__form {
+    margin-top: 10px;
     width: 100%;
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__search {
+      height: 40px;
+      padding: 0 15px;
+      line-height: 40px;
+      font-size: 18px;
+      width: calc(80% - 150px);
+      display: inline-block;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      @media screen and (max-width: 798px) {
+        width: calc(100% - 80px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__submit {
+      height: 40px;
+      background-color: $devs-blue;
+      color: $devs-white;
+      border: none;
+      text-align: center;
+      width: 150px;
+      display: inline-block;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      @media screen and (max-width: 798px) {
+        width: 80px;
+      }
+    }
   }
 }
