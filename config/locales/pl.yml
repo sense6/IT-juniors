@@ -47,8 +47,11 @@ pl:
     companies:
       all_companies_list: "wszystkie firmy"
       edit: "edycja"
+    offers:
+      all_offers_list: "wszystkie oferty"
 
   # -- Partials
   partials:
     offer:
       view: "Sprawdź ofertę"
+      apply: "Aplikuj"
