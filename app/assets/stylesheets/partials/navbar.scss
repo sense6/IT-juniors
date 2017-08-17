@@ -28,6 +28,14 @@
       a {
         color: $devs-white;
         font-weight: 600;
+        transition: color 0.3s ease-in-out;
+        height: 70px;
+        line-height: 70px;
+        display: inline-block;
+        &:hover {
+          text-decoration: none;
+          color: $devs-blue;
+        }
       }
     }
   }
