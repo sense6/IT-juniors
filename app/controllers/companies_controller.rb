@@ -18,4 +18,24 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
+
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    @comapny = Company.find(params[:id])
+    if @company.update(company_params)
+      flash[:success] = "edited"
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def company_params
+    params.require(:company).permit(:address,:phone,:nip,:krs,:web_page)
+  end
 end

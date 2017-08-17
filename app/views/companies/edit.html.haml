@@ -1,0 +1,23 @@
+= simple_form_for @company do |f|
+  %p
+    = f.label :address
+    %br/
+    = f.text_field :address
+  %p
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  %p
+    = f.label :nip
+    %br/
+    = f.text_field :nip
+  %p
+    = f.label :krs
+    %br/
+    = f.text_field :krs
+  %p
+    = f.label :web_page
+    %br/
+    = f.text_field :web_page
+  %p
+    = f.submit

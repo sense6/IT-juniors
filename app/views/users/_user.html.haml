@@ -1,4 +1,6 @@
-= user.email
+= link_to "#{user.email}", user_path(user)
+= user.first_name
+= user.last_name
 - user.technologies.each do |technology|
   = technology.name
 %br

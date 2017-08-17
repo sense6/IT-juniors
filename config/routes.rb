@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'offers#index'
   resources :companies, :offers
 
+  get 'skills/create'
+
   devise_for :users
 
   resources :users
