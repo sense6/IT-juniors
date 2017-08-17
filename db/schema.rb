@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814090403) do
+ActiveRecord::Schema.define(version: 20170817093210) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20170814090403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "login"
-    t.string "first_name", null: false
+    t.string "first_name"
     t.string "last_name"
     t.string "github_name"
     t.boolean "admin", default: false

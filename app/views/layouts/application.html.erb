@@ -21,14 +21,18 @@
            <%= link_to "ITJuniors", root_path, class: "navbar-brand" %>
          </div>
          <div id="navbar" class="navbar-collapse collapse">
-           <form class="navbar-form navbar-right">
-             <button type="submit" class="btn btn-success">Sign up</button>
-             <% if I18n.locale == I18n.default_locale %>
-             <%= link_to "Polski", { :locale=>'pl' }, class: "btn-sm btn-default" %>
-             <% else %>
-             <%= link_to "English", { :locale=>'en' }, class: "btn-sm btn-default" %>
-             <%end%>
-           </form>
+           <ul class="navbar-form navbar-right">
+             <li>
+               <%= render "/devise/menu/login_items" %>
+             </li>
+             <li>
+               <% if I18n.locale == I18n.default_locale %>
+               <%= link_to "Polski", { :locale=>'pl' }, class: "btn-sm btn-default" %>
+               <% else %>
+               <%= link_to "English", { :locale=>'en' }, class: "btn-sm btn-default" %>
+               <%end%>
+             </li>
+           </ul>
          </div><!--/.navbar-collapse -->
        </div>
      </nav>

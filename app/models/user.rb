@@ -9,8 +9,6 @@ class User < ApplicationRecord
   has_many :levels,       through: :skills
   belongs_to :company, optional: true
 
-  validates :first_name, presence: true
-
   def self.filter_users(search)
     if search
       User.joins(:technologies)
