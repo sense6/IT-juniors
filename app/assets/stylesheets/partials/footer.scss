@@ -2,9 +2,10 @@
 
 .footer {
 background-color: $devs-black;
-bottom: 0;
+bottom:0;
 width: 100%;
-height: auto;
+position:absolute;
+height:40px;
 
   .text-muted{
     font-style: $devs-primary-sans;
