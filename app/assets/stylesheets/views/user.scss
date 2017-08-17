@@ -1,0 +1,8 @@
+@import '../global/variables';
+.user-single {
+  padding: 170px 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc( 100% - 54px );
+}
