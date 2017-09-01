@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :skills,       dependent: :destroy
   has_many :technologies, through: :skills
   has_many :levels,       through: :skills
-  belongs_to :company, optional: true
+  has_one :company
 
   def self.filter_users(search)
     if search

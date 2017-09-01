@@ -4,11 +4,9 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    if user.company.present?
-      can :edit, Company, id: user.company_id
-    end
+    can :manage, User, id: user.id
+    can :manage, Company, id: user.company.id
 
-    can :edit, User, id: user.id
     can :read, :all
   end
 end
