@@ -1,0 +1,26 @@
+%company
+  .content
+    = simple_form_for @company do |f|
+      %p
+        = f.label :name
+        = f.text_field :name
+      %p
+        = f.label :description
+        = f.text_area :description
+      %p
+        = f.label :address
+        = f.text_field :address
+      %p
+        = f.label :phone
+        = f.text_field :phone
+      %p
+        = f.label :nip
+        = f.text_field :nip
+      %p
+        = f.label :krs
+        = f.text_field :krs
+      %p
+        = f.label :web_page
+        = f.text_field :web_page
+      %p
+        = f.submit
