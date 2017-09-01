@@ -5,9 +5,11 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new
+    @company = current_user.build_company(company_params)
     if @company.save
-      redirect_to request.referrer
+      redirect_to company_path @company
+    else
+      redirect_to users_path
     end
   end
 
@@ -27,7 +29,7 @@ class CompaniesController < ApplicationController
     @comapny = Company.find(params[:id])
     if @company.update(company_params)
       flash[:success] = "edited"
-      redirect_to users_path
+      redirect_to company_path 
     else
       render :edit
     end
@@ -36,6 +38,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:address,:phone,:nip,:krs,:web_page)
+    params.require(:company).permit(:name,:description,:address,:phone,:nip,:krs,:web_page)
   end
 end
