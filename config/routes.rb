@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope "/:locale" do
     get 'skills/create'
     get 'skills/destroy'
+    get 'skills/update'
     resources :companies, :offers, :users
   end
 

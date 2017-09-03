@@ -1,10 +1,23 @@
 %p My skills:
-- @user.technologies.each do |f|
-  = f.name
-  = link_to "delete from skills", skills_destroy_path(user_id: @user.id,technology_id: f.id)
+- @user.skills.each do |f|
+  .form-inline
+    .form-group
+      = f.technology.name
+      = f.level.name
+      .dropdown
+        %button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          Skill level
+          %span.caret
+        %ul.dropdown-menu
+          - @levels.each do |level|
+            %li
+              = link_to level.name, skills_update_path(user_id: @user.id, skill_id: f.id, level_id: level.id)
+      = link_to "delete", skills_destroy_path(user_id: @user.id, skill_id: f.id)
+
   %br
 %button.btn.btn-info{"data-target" => "#skills", "data-toggle" => "collapse", :type => "button"} Add Skills
 #skills.collapse
   - @technologies.each do |f|
     = f.name
-    = link_to "add to skills", skills_create_path(user_id: @user.id, technology_id: f.id, level_id: 1)
+    = link_to "add to skills", skills_create_path(user_id: @user.id, technology_id: f.id)
+    %br

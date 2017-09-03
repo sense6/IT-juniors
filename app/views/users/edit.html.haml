@@ -18,4 +18,5 @@
               = f.submit
             = render partial: "skills"
             %br
-            = link_to "Create company", new_company_path
+            - if @user.company.blank?
+              = link_to "Create company", new_company_path

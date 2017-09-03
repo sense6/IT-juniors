@@ -46,6 +46,10 @@ levels = [
   {
     en: "applied theory",
     pl: "zastosowanie teorii"
+  },
+  {
+    en: "set level",
+    pl: "ustaw poziom"
   }
 ]
 
@@ -53,7 +57,7 @@ levels = [
 if Company.count < companies_count
   puts "-- Creating companies --"
   companies_count.times do
-    Company.create(
+    Company.create!(
       name: FFaker::Lorem.word.capitalize,
       description: FFaker::Lorem.paragraph,
       phone: FFaker::PhoneNumber.phone_number,

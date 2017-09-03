@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
     @comapny = Company.find(params[:id])
     if @company.update(company_params)
       flash[:success] = "edited"
-      redirect_to company_path 
+      redirect_to company_path
     else
       render :edit
     end
@@ -38,6 +38,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name,:description,:address,:phone,:nip,:krs,:web_page)
+    params.require(:company).permit(:name,:description,:address,:phone,:nip,:krs,:web_page,:email)
   end
 end
