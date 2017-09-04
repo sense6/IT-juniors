@@ -8,3 +8,5 @@
   %br
   - if can? :manage, user.company
     = link_to "#{user.company.name}", edit_company_path(user.company)
+    %br
+    = link_to "add offer", new_offer_path

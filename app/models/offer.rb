@@ -1,17 +1,21 @@
 class Offer < ApplicationRecord
-  belongs_to  :role
   belongs_to  :company
   belongs_to  :currency
+  belongs_to  :role
   has_many    :skills_requirements
   has_many    :technologies,  through: :skills_requirements
   has_many    :levels,        through: :skills_requirements
 
   validates :title, :description, :role, :company, presence: true
 
-  def self.filter_technologies(search)
+  def self.filter_offers(search)
     if search
-      Offer.joins(:technologies)
-           .where('technologies.name LIKE ? OR offers.title LIKE ? OR offers.description LIKE ? OR offers.location LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%").distinct
+      Offer.joins(:technologies).where(
+              'technologies.name LIKE ? OR
+              offers.title LIKE ? OR
+              offers.description LIKE ? OR
+              offers.location LIKE ?',
+              "%#{search}%","%#{search}%","%#{search}%","%#{search}%")
     else
       all
     end

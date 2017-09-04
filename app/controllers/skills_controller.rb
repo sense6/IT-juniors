@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:skill_id])
     if @skill.update(level_id: params[:level_id])
       flash[:success] = "skill updated"
-      redirect_to request.referer 
+      redirect_to edit_user_path params[:user_id]
     else
       redirect_to edit_user_path params[:user_id]
     end

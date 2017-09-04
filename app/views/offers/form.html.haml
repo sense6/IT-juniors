@@ -1,0 +1,18 @@
+= simple_form_for @offer do |f|
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :description
+    = f.text_area :description
+  %p
+    = f.label :location
+    = f.text_field :location
+  %p
+    = f.label :salary_min
+    = f.text_field :salary_min
+  %p
+    = f.label :salary_max
+    = f.text_field :salary_max
+
+  //currency dropdown

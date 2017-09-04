@@ -7,16 +7,17 @@
             = image_tag(gravatar_url(@user))
           = simple_form_for @user do |f|
             %p
-              = f.label :first_name
-              %br/
-              = f.text_field :first_name
+              = f.input :first_name
             %p
-              = f.label :last_name
-              %br/
-              = f.text_field :last_name
+              = f.input :last_name
             %p
-              = f.submit
+              = f.button :submit
             = render partial: "skills"
             %br
             - if @user.company.blank?
               = link_to "Create company", new_company_path
+            - elsif can? :manage, @user.company
+              %h3 Your company:
+              = link_to "#{@user.company.name}", edit_company_path(@user.company)
+              %h4 Add offer:
+              = link_to "add offer", new_offer_path
