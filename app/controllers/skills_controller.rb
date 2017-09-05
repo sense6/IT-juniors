@@ -1,8 +1,11 @@
 class SkillsController < ApplicationController
   def create
     #default level has id: 6
-    @skill = Skill.new(user_id: params[:user_id],technology_id: params[:technology_id], level_id: 6).save
-    redirect_to edit_user_path params[:user_id]
+    @skill = Skill.new(user_id: params[:user_id],technology_id: params[:technology_id], level_id: 6)
+    if @skill.save
+      redirect_to edit_user_path params[:user_id]
+      flash[:success] = "skill created"
+    end
   end
 
   def destroy

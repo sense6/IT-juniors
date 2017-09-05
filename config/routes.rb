@@ -10,8 +10,10 @@ Rails.application.routes.draw do
     get 'skills/create'
     get 'skills/destroy'
     get 'skills/update'
+    get 'skills_requirement/create'
+    get 'skills_requirement/destroy'
+    get 'skills_requirement/update'
     resources :companies, :offers, :users
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

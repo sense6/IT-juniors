@@ -11,8 +11,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @technologies = Technology.filter_tech(@user)
+    @technologies = Technology.filter_user_technologies(@user)
     @levels = Level.all
+    @offers = @user.company.offers.decorate
   end
 
   def update

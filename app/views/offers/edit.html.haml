@@ -1,0 +1,23 @@
+= render partial: "form"
+
+- @offer.skills_requirements.each do |f|
+  .form-inline
+    .form-group
+      = f.technology.name
+      = f.level.name
+      .dropdown
+        %button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          Skill requirement level
+          %span.caret
+        %ul.dropdown-menu
+          - @levels.each do |level|
+            %li
+              = link_to level.name, skills_requirement_update_path(offer_id: @offer.id, skills_requirement_id: f.id, level_id: level.id)
+      = link_to "delete", skills_requirement_destroy_path(offer_id: @offer.id, skills_requirement_id: f.id)
+    %br
+%button.btn.btn-info{"data-target" => "#skills", "data-toggle" => "collapse", :type => "button"} Add Skills req
+#skills.collapse
+  - @technologies.each do |f|
+    = f.name
+    = link_to "add to skills requirement", skills_requirement_create_path(offer_id: @offer.id, technology_id: f.id)
+    %br

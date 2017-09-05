@@ -21,6 +21,12 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id]).decorate
   end
 
+  def edit
+    @offer = Offer.find(params[:id])
+    @technologies = Technology.filter_skill_req_technologies(@offer)
+    @levels = Level.all
+  end
+
   def index
     @offers = Offer.filter_offers(params[:search]).decorate
 

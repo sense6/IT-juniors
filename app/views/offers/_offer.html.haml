@@ -15,3 +15,6 @@
     =offer.short_desc
   %div.offer__view
     =link_to "#{t 'partials.offer.view'}", offer
+    %br
+    - if can? :manage, offer.company.user
+      = link_to 'edit', edit_offer_path(offer)

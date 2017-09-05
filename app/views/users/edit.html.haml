@@ -21,3 +21,8 @@
               = link_to "#{@user.company.name}", edit_company_path(@user.company)
               %h4 Add offer:
               = link_to "add offer", new_offer_path
+              %h4 Your offers:
+              %section.section.section--offers
+                .offers-list
+                  - @offers.each do |offer|
+                    = render offer

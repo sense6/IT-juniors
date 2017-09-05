@@ -1,13 +1,1 @@
-%company
-  .content
-    = simple_form_for @offer do |f|
-      = f.input :title, as: :string
-      = f.input :description, as: :text
-      = f.input :location, as: :string #google maps?
-      = f.input :role_id, collection: @roles
-      = f.input :salary_min
-      = f.input :salary_max
-      = f.input :currency_id, collection: @currencies
-      = f.button :submit
-
-      //redirect to create skill req for offer
+= render partial: "form"
