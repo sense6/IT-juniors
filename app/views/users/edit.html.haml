@@ -18,11 +18,15 @@
               = link_to "Create company", new_company_path
             - elsif can? :manage, @user.company
               %h3 Your company:
+              = link_to "#{@user.company.name}", company_path(@user.company)
+              %h3 Edit company
               = link_to "#{@user.company.name}", edit_company_path(@user.company)
               %h4 Add offer:
               = link_to "add offer", new_offer_path
-              %h4 Your offers:
-              %section.section.section--offers
-                .offers-list
-                  - @offers.each do |offer|
-                    = render offer
+              %br
+              %button.btn.btn-info{"data-target" => "#demo", "data-toggle" => "collapse", :type => "button"} Your Offers
+              #demo.collapse
+                %section.section.section--offers
+                  .offers-list
+                    - @offers.each do |offer|
+                      = render offer

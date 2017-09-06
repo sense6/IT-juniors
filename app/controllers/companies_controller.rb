@@ -15,6 +15,8 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id]).decorate
+    @c = Company.find(params[:id])
+    @o = @c.offers
   end
 
   def index

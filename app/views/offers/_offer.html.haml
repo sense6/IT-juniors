@@ -18,3 +18,7 @@
     %br
     - if can? :manage, offer.company.user
       = link_to 'edit', edit_offer_path(offer)
+      - if offer.applicants.present?
+        %h4 Applicants:
+        - offer.applicants.each do |applicant|
+          =link_to "#{applicant.email}", user_path(applicant)
