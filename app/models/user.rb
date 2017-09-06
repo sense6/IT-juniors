@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :technologies, through: :skills
   has_many :levels,       through: :skills
   has_one :company
+  has_many :job_applications
+  has_many :applied_offers, through: :job_applications, source: :offer
 
   def self.filter_users(search)
     if search

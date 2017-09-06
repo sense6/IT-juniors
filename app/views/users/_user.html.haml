@@ -10,3 +10,14 @@
     = link_to "#{user.company.name}", edit_company_path(user.company)
     %br
     = link_to "add offer", new_offer_path
+  %br
+  - if @user_applied_offers.present?
+    %button.btn.btn-info{"data-target" => "#demo", "data-toggle" => "collapse", :type => "button"} Applied offers
+    #demo.collapse
+      %section.section.section--offers
+        .container
+          .row
+            .col-md-12
+              .offers-list
+                - @user_applied_offers.each do |offer|
+                  = render offer

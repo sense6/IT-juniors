@@ -7,13 +7,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @technologies = @user.technologies
+    @user_applied_offers = @user.applied_offers.decorate rescue nil
   end
 
   def edit
     @user = User.find(params[:id])
     @technologies = Technology.filter_user_technologies(@user)
     @levels = Level.all
-    @offers = @user.company.offers.decorate
+    @offers = @user.company.offers.decorate rescue nil
   end
 
   def update

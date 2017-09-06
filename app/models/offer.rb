@@ -5,7 +5,8 @@ class Offer < ApplicationRecord
   has_many    :skills_requirements
   has_many    :technologies,  through: :skills_requirements
   has_many    :levels,        through: :skills_requirements
-
+  has_many    :job_applications
+  has_many    :applicants,    through: :job_applications, source: :user
   validates :title, :description, :role, :company, presence: true
 
   def self.filter_offers(search)

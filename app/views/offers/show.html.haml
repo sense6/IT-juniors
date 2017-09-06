@@ -23,4 +23,4 @@
             %h3.single-offer__details__salary="#{@offer.salary}"
             %div.single-offer__details__address="#{t 'activerecord.attributes.company.address'}: #{@offer.location}"
             .text-center
-              =mail_to @offer.company.email, "#{t 'partials.offer.apply'}", class: "single-offer__apply"
+              = link_to "#{t 'partials.offer.apply'}",job_application_create_path(offer_id: @offer.id), class: "single-offer__apply"
