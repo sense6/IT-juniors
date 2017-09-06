@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904191139) do
+ActiveRecord::Schema.define(version: 20170906121018) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170904191139) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "job_applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "offer_id"
+    t.index ["offer_id"], name: "index_job_applications_on_offer_id"
+    t.index ["user_id"], name: "index_job_applications_on_user_id"
   end
 
   create_table "level_translations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -127,6 +136,8 @@ ActiveRecord::Schema.define(version: 20170904191139) do
   end
 
   add_foreign_key "companies", "users"
+  add_foreign_key "job_applications", "offers"
+  add_foreign_key "job_applications", "users"
   add_foreign_key "offers", "companies"
   add_foreign_key "skills", "levels"
   add_foreign_key "skills", "technologies"
