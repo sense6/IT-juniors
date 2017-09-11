@@ -12,6 +12,7 @@ class OffersController < ApplicationController
     @offer = @company.offers.build(offer_params)
     if @offer.save
       redirect_to offer_path @offer
+      flash[:success] = "offer created"
     else
       redirect_to new_offer_path, alert: 'error'
     end
@@ -25,6 +26,18 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     @technologies = Technology.filter_skill_req_technologies(@offer)
     @levels = Level.all
+    @currencies = Currency.all
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    if @offer.update(offer_params)
+      flash[:success] = "offer updated"
+      redirect_to offer_path @offer
+    else
+      flash[:danger] = "something went wrong"
+      redirect_to edit_offer_path(@offer)
+    end
   end
 
   def index

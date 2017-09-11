@@ -1,6 +1,8 @@
 %nav.navbar-devs
   .navbar-devs__brand
     = link_to "ITJuniors", root_path, class: "navbar-brand"
+  - flash.each do |message_type, message|
+    .notice{:class => "alert alert-#{message_type}"}= message
   .navbar-devs__menu
     %ul.navbar-devs__list
       = render "/devise/menu/login_items"
