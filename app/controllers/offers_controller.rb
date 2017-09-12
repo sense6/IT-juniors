@@ -28,6 +28,7 @@ class OffersController < ApplicationController
     @technologies = Technology.filter_skill_req_technologies(@offer)
     @levels = Level.all
     @currencies = Currency.all
+    @roles = Role.all
   end
 
   def update
