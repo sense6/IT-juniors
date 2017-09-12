@@ -4,9 +4,9 @@
     %div.single-offer__hero__content
       %h1.single-offer__hero__title= @company.name
       %div.single-offer__hero__details=render @company
-
-%div.container
-  .row
-    .col-md-12
-      %h2.text-center.margin-top= "#{t 'activerecord.models.offer.other'}"
-      %div.offers-list.offers-list--company=render @company.offers
+%section.section.section--offers
+  %div.container
+    .row
+      .col-md-12
+        %h2.text-center.margin-top= "#{t 'activerecord.models.offer.other'}"
+        %div.offers-list.offers-list--company=render @company.offers

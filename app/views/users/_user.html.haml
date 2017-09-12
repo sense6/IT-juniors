@@ -1,4 +1,4 @@
-%article.user-item.user-offers
+%article.user-item
   .user-item__image= link_to image_tag(gravatar_url(user)), user_path(user.id)
   .user-item__name="#{user.first_name} #{user.last_name}"
   .user-item__email= "#{user.email}"

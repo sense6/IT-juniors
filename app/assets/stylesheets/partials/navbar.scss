@@ -12,6 +12,22 @@
   transform: translate(-50%, -50%)
 }
 
+.alert {
+  padding: 5px;
+
+  &.alert-notice {
+    @extend .alert;
+    color: $devs-blue;
+    background-color: $devs-blue-light;
+    border-color: $devs-grey;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+
+
+}
+
+
 .navbar-devs {
   display: flex;
   justify-content: space-between;
@@ -22,7 +38,7 @@
   width: 100%;
   z-index: 9999;
   padding: 0 15px;
-background-color: $devs-black;
+  background-color: $devs-black;
   box-shadow: 0 0 15px 0 rgba($devs-black, 0.65);
 
 

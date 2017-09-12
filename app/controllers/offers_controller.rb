@@ -14,7 +14,8 @@ class OffersController < ApplicationController
       redirect_to offer_path @offer
       flash[:success] = "offer created"
     else
-      redirect_to new_offer_path, alert: 'error'
+      redirect_to new_offer_path
+      flash[:danger] = "error"
     end
   end
 
