@@ -1,4 +1,4 @@
-%article.user-item
+%article.user-offers
   .user-item__image= link_to image_tag(gravatar_url(user)), user_path(user.id)
   .user-item__name="#{user.first_name} #{user.last_name}"
   .user-item__email= "#{user.email}"
@@ -10,14 +10,12 @@
     = link_to "#{user.company.name}", company_path(user.company)
     %br
     = link_to "add offer", new_offer_path
-  %br
-  - if current_user == user && @user_applied_offers.present?
-    %button.btn.btn-info{"data-target" => "#demo", "data-toggle" => "collapse", :type => "button"} Applied offers
-    #demo.collapse
-      %section.section.section--offers
-        .container
-          .row
-            .col-md-12
-              .offers-list
-                - @user_applied_offers.each do |offer|
-                  = render offer
+%br
+
+- if current_user == user && @user_applied_offers.present?
+  %button.btn.btn-info{"data-target" => "#demo", "data-toggle" => "collapse", :type => "button"} Applied offers
+  #demo.collapse
+    %section.section.section--offers
+      .offers-list
+        - @user_applied_offers.each do |offer|
+          = render offer
