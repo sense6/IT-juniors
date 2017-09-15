@@ -6,7 +6,8 @@
       .col-md-12
         %section.user-list
           - @users.each do |user|
-            =render user
+            %article.user-item
+              =render user
 - else
   .not-found
     .not-found__content="#{t 'pages.offers.not_found'}"

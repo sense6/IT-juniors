@@ -15,11 +15,19 @@
   width: calc(33% - 40px);
   margin: 0 20px 40px;
   background-color: white;
+
+  .user-offers {
+    @extend .user-item;
+    width: 100%;
+    background-color: whitesmoke;
+  }
   &__image img {
     height: 60px;
     border-radius: 50%;
     margin-bottom: 15px;
   }
+
+
 
   &__name {
     font-size: 20px;

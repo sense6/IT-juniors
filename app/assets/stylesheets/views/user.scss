@@ -14,11 +14,24 @@
   background-color: whitesmoke;
   min-height: calc( 100% - 54px );
 }
-.dropdown-menu {
-
+.user-skill-display {
+  align-items: center;
+  display: block;
+  margin-bottom: 5px;
 }
-.dropdown-menu.drop1 {
-    position: absolute;
-    top: 0;
-    left: 100%;
+.user-skill-button {
+  display: block;
+  margin: 0 auto;
+}
+.user-skills {
+  padding: 10px;
+}
+.red {
+  color: red;
+}
+p {
+  margin: 5px;
+}
+.user-company {
+
 }

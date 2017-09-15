@@ -1,23 +1,25 @@
 %p My skills:
-- @user.skills.each do |f|
-  .form-inline
-    .form-group
-      = f.technology.name
-      = f.level.name
-      .dropdown
-        %button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-          Skill level
-          %span.caret
-        %ul.dropdown-menu
-          - @levels.each do |level|
-            %li
-              = link_to level.name, skills_update_path(user_id: @user.id, skill_id: f.id, level_id: level.id)
-      = link_to "delete", skills_destroy_path(user_id: @user.id, skill_id: f.id)
-
+.user-skills.center-block
+  - @user.skills.each do |f|
+    .form-inline.user-skill-display
+      .form-group
+        .skill__item= "#{f.technology.name} - #{f.level.name}"
+      .form-group
+        .dropdown
+          %button.btn-xs.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+            set level
+            %span.caret
+          %ul.dropdown-menu
+            - @levels.each do |level|
+              %li
+                = link_to level.name, skills_update_path(user_id: @user.id, skill_id: f.id, level_id: level.id)
+      .form-group
+        = link_to skills_destroy_path(user_id: @user.id, skill_id: f.id) do
+          %span.glyphicon.glyphicon-remove.red
   %br
 %button.btn.btn-info{"data-target" => "#skills", "data-toggle" => "collapse", :type => "button"} Add Skills
 #skills.collapse
   - @technologies.each do |f|
-    = f.name
+    .skill__item= f.name
     = link_to "add to skills", skills_create_path(user_id: @user.id, technology_id: f.id)
     %br
