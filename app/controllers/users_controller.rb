@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @technologies = Technology.filter_user_technologies(@user)
-    @levels = Level.all
+    @levels = Level.all.to_a
+    @levels.pop
     @offers = @user.company.offers.decorate rescue nil
   end
 

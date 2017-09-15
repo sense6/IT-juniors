@@ -12,13 +12,14 @@ class Offer < ApplicationRecord
 
   def self.filter_offers(search)
     if search
-      Offer.joins(:technologies,:role).where(
+      Offer.eager_load(:technologies,:role).where(
               "technologies.name LIKE ? OR
               offers.title LIKE ? OR
               offers.description LIKE ? OR
               offers.location LIKE ? OR
               roles.name LIKE ?",
               "%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%")
+              .distinct
     else
       all
     end
