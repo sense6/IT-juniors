@@ -34,3 +34,15 @@
     max-width: 100%;
   }
 }
+.form-control {
+
+}
+.login-checkbox {
+  @extend .form-control;
+  width: 15px;
+  height: 15px;
+  left: 135px;
+  top: 1px;
+  line-height: normal;
+
+}

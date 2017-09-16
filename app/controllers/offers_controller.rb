@@ -1,4 +1,6 @@
 class OffersController < ApplicationController
+  helper_method :applied?
+
   def new
     @offer = Offer.new
     @roles = Role.all
@@ -50,6 +52,10 @@ class OffersController < ApplicationController
   def destroy
     @offer = Offer.find(params[:id]).destroy
     flash[:success] = "Offer destroyed"
+  end
+
+  def applied?(offer)
+    true unless current_user.applied_offers.where(id: offer.id).blank?
   end
 
   private

@@ -23,4 +23,9 @@
             %h3.single-offer__details__salary="#{@offer.salary}"
             %div.single-offer__details__address="#{t 'activerecord.attributes.company.address'}: #{@offer.location}"
             .text-center
-              = link_to "#{t 'partials.offer.apply'}",job_application_create_path(offer_id: @offer.id), class: "single-offer__apply"
+              - if @offer.company.user == current_user
+              - elsif applied?(@offer)
+                .single-offer__apply
+                  %p Already applied
+              - else
+                = link_to "#{t 'partials.offer.apply'}",job_application_create_path(offer_id: @offer.id), class: "single-offer__apply"
